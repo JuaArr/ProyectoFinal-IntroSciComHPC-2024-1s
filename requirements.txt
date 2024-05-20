@@ -6,6 +6,8 @@ ghp-import
 jupyterlab-lsp
 jupyterlab-git
 pandas
+pygmsh
+meshio[all]
 vpython
 ipython
 RISE

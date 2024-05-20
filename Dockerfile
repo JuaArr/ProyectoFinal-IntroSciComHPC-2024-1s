@@ -31,6 +31,7 @@ RUN apt-get update && \
     libspdlog-dev \
     linux-perf \
 	parallel \
+	python3-gmsh \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -58,6 +59,10 @@ RUN cd fmt && \
 
 # Install starship to show git branch in prompt plus some other stuff
 RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y
+
+# Install spack
+RUN git clone -c feature.manyFiles=true https://github.com/spack/spack.git
+RUN . spack/share/spack/setup-env.sh
 
 # Install OpenFOAM v. 2312 from source https://develop.openfoam.com/Development/openfoam/-/wikis/precompiled
 RUN curl https://dl.openfoam.com/add-debian-repo.sh | sudo bash
