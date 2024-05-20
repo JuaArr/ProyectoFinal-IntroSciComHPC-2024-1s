@@ -62,7 +62,8 @@ RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y
 
 # Install spack
 RUN git clone -c feature.manyFiles=true https://github.com/spack/spack.git
-RUN /spack/share/spack/setup-env.sh
+RUN chmod +x /spack/share/spack/setup-env.sh
+    /spack/share/spack/setup-env.sh
 
 # Install OpenFOAM v. 2312 from source https://develop.openfoam.com/Development/openfoam/-/wikis/precompiled
 RUN curl https://dl.openfoam.com/add-debian-repo.sh | sudo bash
