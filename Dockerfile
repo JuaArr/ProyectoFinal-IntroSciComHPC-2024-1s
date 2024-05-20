@@ -62,8 +62,6 @@ RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y
 
 # Install spack
 RUN git clone -c feature.manyFiles=true https://github.com/spack/spack.git
-RUN echo 'export SPACK_ROOT=~/spack' >> ${HOME}//.bashrc \
-    echo 'source $SPACK_ROOT/share/spack/setup-env.sh' >> ${HOME}/.bashrc
 
 # Install OpenFOAM v. 2312 from source https://develop.openfoam.com/Development/openfoam/-/wikis/precompiled
 RUN curl https://dl.openfoam.com/add-debian-repo.sh | sudo bash
@@ -103,6 +101,8 @@ USER ${USER}
 RUN MPLBACKEND=Agg python3 -c "import matplotlib.pyplot"
 # Setup starship
 RUN echo 'eval "$(starship init bash)"' >> ${HOME}/.bashrc
+# Setup spack
+RUN echo 'source /spack/share/spack/setup-env.sh' >> ${HOME}/.bashrc
 
 # Fix permissions on .local
 USER root
