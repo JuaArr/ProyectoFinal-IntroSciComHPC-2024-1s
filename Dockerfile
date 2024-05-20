@@ -22,7 +22,7 @@ RUN apt-get update && \
     curl \
     unzip \
     sudo \
-	gnupg \
+    gnupg \
     tmux \
     cpplint \
     xfonts-100dpi \
@@ -30,8 +30,8 @@ RUN apt-get update && \
     valgrind \
     libspdlog-dev \
     linux-perf \
-	parallel \
-	python3-gmsh \
+    parallel \
+    python3-gmsh \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
