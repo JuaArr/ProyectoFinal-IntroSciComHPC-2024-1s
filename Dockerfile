@@ -29,7 +29,6 @@ RUN apt-get update && \
     ddd \
     valgrind \
     libspdlog-dev \
-    linux-perf \
     parallel \
     python3-gmsh \
     && apt-get clean && \
