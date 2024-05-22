@@ -8,7 +8,7 @@ jupyterlab-git
 pandas
 pygmsh
 meshio[all]
---upgrade gmsh
+gmsh
 vpython
 ipython
 RISE
