@@ -6,7 +6,6 @@ ghp-import
 jupyterlab-lsp
 jupyterlab-git
 pandas
-pygmsh
 meshio[all]
 gmsh
 vpython

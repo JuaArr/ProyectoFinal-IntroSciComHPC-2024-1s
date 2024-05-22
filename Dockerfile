@@ -30,7 +30,6 @@ RUN apt-get update && \
     valgrind \
     libspdlog-dev \
     parallel \
-    python3-gmsh \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
