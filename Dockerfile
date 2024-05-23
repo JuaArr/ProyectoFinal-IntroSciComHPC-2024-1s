@@ -15,7 +15,7 @@ RUN apt-get update && \
     clang \
     libeigen3-dev \
     bat \
-    emacs-nox \
+    neovim \
     gnuplot-nox \
     git \
     htop \
@@ -92,15 +92,17 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 
-WORKDIR ${HOME}
-USER ${USER}
-
-# Run matplotlib config to generate the font cache
-RUN MPLBACKEND=Agg python3 -c "import matplotlib.pyplot"
 # Setup starship
+USER root
 RUN echo 'eval "$(starship init bash)"' >> ${HOME}/.bashrc
 # Setup spack
+USER root
 RUN echo 'source /spack/share/spack/setup-env.sh' >> ${HOME}/.bashrc
+
+# Run matplotlib config to generate the font cache
+USER ${USER}
+WORKDIR ${HOME}
+RUN MPLBACKEND=Agg python3 -c "import matplotlib.pyplot"
 
 # Fix permissions on .local
 USER root
