@@ -30,6 +30,7 @@ RUN apt-get update && \
     valgrind \
     libspdlog-dev \
     parallel \
+    time \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -57,9 +58,6 @@ RUN cd fmt && \
 
 # Install starship to show git branch in prompt plus some other stuff
 RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y
-
-# Install spack
-RUN git clone -c feature.manyFiles=true https://github.com/spack/spack.git
 
 # Install OpenFOAM v. 2312 from source https://develop.openfoam.com/Development/openfoam/-/wikis/precompiled
 RUN curl https://dl.openfoam.com/add-debian-repo.sh | sudo bash
@@ -92,17 +90,13 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 
-# Setup starship
-USER root
-RUN echo 'eval "$(starship init bash)"' >> ${HOME}/.bashrc
-# Setup spack
-USER root
-RUN echo 'source /spack/share/spack/setup-env.sh' >> ${HOME}/.bashrc
-
-# Run matplotlib config to generate the font cache
 USER ${USER}
 WORKDIR ${HOME}
+
+# Run matplotlib config to generate the font cache
 RUN MPLBACKEND=Agg python3 -c "import matplotlib.pyplot"
+# Setup starship
+RUN echo 'eval "$(starship init bash)"' >> ${HOME}/.bashrc
 
 # Fix permissions on .local
 USER root
