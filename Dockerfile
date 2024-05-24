@@ -31,6 +31,7 @@ RUN apt-get update && \
     libspdlog-dev \
     parallel \
     time \
+	libglu1-mesa \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
