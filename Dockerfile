@@ -39,7 +39,7 @@ RUN apt-get update && \
     libfreetype6-dev  \
     libgl1-mesa-dev \
     libocct-foundation-dev \
-    libocct-data-exchange-dev 
+    libocct-data-exchange-dev \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
