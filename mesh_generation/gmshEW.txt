@@ -1,7 +1,0 @@
-Error   : Surface 2 cannot be meshed using the transfinite algorithm (non-matching number of nodes on opposite sides 152 != 136 or 136 != 152)
-Traceback (most recent call last):
-  File "/workspaces/ProyectoFinal-IntroSciComHPC-2024-1s/mesh_generation/gmshMesh.py", line 99, in <module>
-    mesh.generate(dim = 3)
-  File "/usr/local/lib/python3.11/site-packages/gmsh.py", line 2060, in generate
-    raise Exception(logger.getLastError())
-Exception: Surface 2 cannot be meshed using the transfinite algorithm (non-matching number of nodes on opposite sides 152 != 136 or 136 != 152)

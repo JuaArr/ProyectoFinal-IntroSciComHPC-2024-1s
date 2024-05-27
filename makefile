@@ -1,8 +1,12 @@
 gmsh_mesh_dir = mesh_generation
 py = python3
 
-all: generate_mesh
+.PHONY: cleanMeshOutput
 
-generate_mesh: $(gmsh_mesh_dir)/gmshMesh.py
-#	$(py) $^ 1> $(gmsh_mesh_dir)/gmshSummary.txt 2> $(gmsh_mesh_dir)/gmshEW.txt
-	$(py) $^
+all: generateMesh
+
+generateMesh: $(gmsh_mesh_dir)/gmshMesh.py
+	$(py) $^ 1> $(gmsh_mesh_dir)/gmshSummary.txt 2> $(gmsh_mesh_dir)/gmshError.txt
+
+cleanMeshOutput:
+	rm -f $(gmsh_mesh_dir)/*.msh $(gmsh_mesh_dir)/*.txt
