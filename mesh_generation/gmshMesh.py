@@ -1,3 +1,5 @@
+# --------------------------- gmsh API ---------------------------
+
 import gmsh
 
 # --------------------------- Constants ---------------------------
@@ -13,7 +15,7 @@ maxX = 100
 minY = 0
 maxY = 20
 minZ = 0
-maxZ = 10
+maxZ = 2
 
 # Standard mesh size
 lc = 1
@@ -72,7 +74,7 @@ mesh.field.setNumber(2, "InField", 1)
 mesh.field.setNumber(2, "SizeMin", lc/10)
 mesh.field.setNumber(2, "SizeMax", lc)
 mesh.field.setNumber(2, "DistMin", 0)
-mesh.field.setNumber(2, "DistMax", 3)
+mesh.field.setNumber(2, "DistMax", 2)
 
 # Using the threshold mesh size field
 mesh.field.setAsBackgroundMesh(2)
@@ -82,22 +84,13 @@ option.setNumber("Mesh.MeshSizeExtendFromBoundary", 0)
 option.setNumber("Mesh.MeshSizeFromPoints", 0)
 option.setNumber("Mesh.MeshSizeFromCurvature", 0)
 
-# --------------------------- Structured Mesh ---------------------------
-
-# for curve in occ.getEntities(1):
-#     mesh.setTransfiniteCurve(curve[1], 15)
-
-# for surf in occ.getEntities(2):
-#     mesh.setTransfiniteSurface(surf[1])
-
-# option.setNumber('Mesh.QuasiTransfinite', 1)
-
 # --------------------------- Mesh Generation ---------------------------
 
 # Mesh algorithm
-# option.setNumber('Mesh.RecombineAll', 1)
-# option.setNumber('Mesh.RecombinationAlgorithm', 1)
-# option.setNumber('Mesh.Recombine3DLevel', 2)
+option.setNumber('Mesh.RecombineAll', 1)
+option.setNumber('Mesh.Recombine3DAll', 1)
+option.setNumber('Mesh.Recombine3DLevel', 2)
+option.setNumber('Mesh.RecombinationAlgorithm', 1)
 option.setNumber('Mesh.ElementOrder', 1)
 
 # Mesh generation
