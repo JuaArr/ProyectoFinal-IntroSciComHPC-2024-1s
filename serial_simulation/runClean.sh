@@ -13,13 +13,7 @@ writeInterval=$(awk 'NR==31 {print $2}' system/controlDict | tr -d ';')
 # Calcular tstep como el producto de deltaT y writeInterval
 stepTime=$((deltaT * writeInterval))
 
-# Imprimir los valores para verificar
-echo "tmin: $startTime"
-echo "tmax: $endTime"
-echo "deltaT: $deltaT"
-echo "writeInterval: $writeInterval"
-echo "tstep: $stepTime"
-
 # Eliminar los directorios numerados según los valores leídos
 rm -fr $(seq $stepTime $stepTime $endTime)
 rm -fr constant/polyMesh
+rm -f log.FOAMout log.FOAMerror time.log
