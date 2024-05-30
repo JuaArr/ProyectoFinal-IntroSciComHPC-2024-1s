@@ -10,38 +10,41 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    object      controlDict;
+    object      fvSchemes;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     pimpleFoam;
+ddtSchemes
+{
+    default         Euler;
+}
 
-startFrom       startTime;
+gradSchemes
+{
+    default         Gauss linear;
+}
 
-startTime       0;
+divSchemes
+{
+    default         Gauss linear;
+    // default         none;
+    // div(phi,U)      bounded Gauss limitedLinearV 1;
+    // div(phi,k)      bounded Gauss limitedLinear 1;
+    // div(phi,epsilon) bounded Gauss limitedLinear 1;
+    // div((nuEff*dev2(T(grad(U))))) Gauss linear;
+}
 
-stopAt          endTime;
+laplacianSchemes
+{
+    default         Gauss linear corrected;
+}
 
-endTime         20000;
+interpolationSchemes
+{
+    default         linear;
+}
 
-deltaT          10;
-
-writeControl    timeStep;
-
-writeInterval   100;
-
-purgeWrite      0;
-
-writeFormat     ascii;
-
-writePrecision  6;
-
-writeCompression off;
-
-timeFormat      general;
-
-timePrecision   6;
-
-runTimeModifiable yes;
-
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+snGradSchemes
+{
+    default         corrected;
+}
