@@ -7,8 +7,9 @@ FROM python:3.11-slim
 # Install packages
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    gcc libffi-dev\
+    gcc \
     g++ \
+    libffi-dev \
     gdb \
     make \
     cmake \
@@ -31,6 +32,9 @@ RUN apt-get update && \
     libspdlog-dev \
     parallel \
     time \
+    gawk \
+    sed \
+    coreutils \
     libglu1 \
     libxcursor-dev \
     libxft2 \
