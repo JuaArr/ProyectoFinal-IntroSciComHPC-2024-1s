@@ -14,7 +14,10 @@ writeInterval=$(awk 'NR==31 {print $2}' system/controlDict | tr -d ';')
 stepTime=$((deltaT * writeInterval))
 
 # Eliminar los directorios numerados según los valores leídos
+rm -fr $(seq $stepTime $stepTime $endTime)
 rm -fr constant/polyMesh
-rm -fr parallel_simulation/processor*
+rm -fr processor*
 rm -f system/decomposeParDict
 rm -f log.FOAMout log.FOAMerror time.log
+rm -fr machines
+rm -fr log.*

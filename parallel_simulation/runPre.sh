@@ -11,3 +11,5 @@ read nproc
 sed "s/nOS/$nproc/" system/decomposeParDict-draft > system/decomposeParDict
 
 decomposePar &> /dev/null
+
+sed "s/nOS/$nproc/" machines-draft > machines

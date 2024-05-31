@@ -1,10 +1,11 @@
-.PHONY: runAll runPre runClean
+.PHONY: runPre runAll runClean
 
-runAll:
-	bash serial_simulation/runAll.sh
 
 runPre:
 	bash serial_simulation/runPre.sh
+
+runAll:
+	bash serial_simulation/runAll.sh
 
 runClean:
 	bash serial_simulation/runClean.sh
