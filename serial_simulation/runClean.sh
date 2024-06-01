@@ -16,4 +16,4 @@ stepTime=$((deltaT * writeInterval))
 # Eliminar los directorios numerados según los valores leídos
 rm -fr $(seq $stepTime $stepTime $endTime)
 rm -fr constant/polyMesh
-rm -f log.FOAMout log.FOAMerror time_*.log
+rm -f log.FOAMout log.FOAMerror

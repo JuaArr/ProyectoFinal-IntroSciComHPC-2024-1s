@@ -18,5 +18,5 @@ rm -fr $(seq $stepTime $stepTime $endTime)
 rm -fr constant/polyMesh
 rm -fr processor*
 rm -f system/decomposeParDict
-rm -f log.FOAMout log.FOAMerror time_*.log
+rm -f log.FOAMout log.FOAMerror
 rm -f machines
