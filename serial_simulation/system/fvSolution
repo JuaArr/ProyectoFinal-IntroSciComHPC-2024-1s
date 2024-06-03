@@ -23,6 +23,7 @@ solvers
         smoother         DICGaussSeidel;
         tolerance        1e-6;
         relTol           0.01;
+        nCellsInCoarsestLevel 20;
     }
 
     pFinal
@@ -48,8 +49,9 @@ solvers
 
 PIMPLE
 {
+    nCorrectors         3;
     nNonOrthogonalCorrectors 0;
-    nCorrectors         2;
+    // nOuterCorrectors    1;
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
