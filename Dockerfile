@@ -36,6 +36,7 @@ RUN apt-get update && \
     sed \
     coreutils \
     slurm-client \
+    munge \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -68,6 +69,10 @@ RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y
 RUN curl https://dl.openfoam.com/add-debian-repo.sh | sudo bash
 RUN sudo apt-get update && \
     sudo apt-get install -y --no-install-recommends openfoam2312-default
+
+# Munge set up
+RUN mkdir -p /etc/munge /var/log/munge /run/munge && \
+    chown munge: /etc/munge /var/log/munge /run/munge
 
 # Fix timezone
 ENV TZ=America/Bogota
