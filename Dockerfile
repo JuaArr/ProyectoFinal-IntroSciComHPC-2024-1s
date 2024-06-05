@@ -35,6 +35,7 @@ RUN apt-get update && \
     gawk \
     sed \
     coreutils \
+    slurm-client \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
