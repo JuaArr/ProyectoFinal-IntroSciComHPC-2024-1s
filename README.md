@@ -39,7 +39,7 @@ docker start 215d
 
 ## Parte 2: Pre y procesamiento de la simulación
 
-# Paso 1: Preparación
+### Paso 1: Preparación
 
 ```bash
 bash parallel_simulation/runPre.sh [n Threads]
@@ -51,21 +51,21 @@ Ejemplo:
 bash parallel_simulation/runPre.sh 16
 ```
 
-## Paso 2: Simulación de los datos en cada paso de tiempo
+### Paso 2: Simulación de los datos en cada paso de tiempo
 Información necesaria para visualizar la simulación en ParaView:
 
 ```bash
 bash parallel_simulation/runAll.sh
 ```
 
-## Parte 3: Generación de métricas de la paralelización
+### Parte 3: Generación de métricas de la paralelización
 Generación de métricas:
 
 ```bash
 bash scaling.sh
 ```
 
-## Parte 4: Exportación de los datos para visualizar la simulación en ParaView desde un computador local
+### Parte 4: Exportación de los datos para visualizar la simulación en ParaView desde un computador local
 
 1.1 Salir del contenedor:
 
