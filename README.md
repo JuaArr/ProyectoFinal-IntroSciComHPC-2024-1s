@@ -9,30 +9,6 @@
 
 1. Crear la imagen: Utiliza el siguiente comando:
 
-```bash
-docker build -t proyecto_final .
-```
-
-2. Luego, se tiene que ejecutar el contenedor a partir de la imagen:
-
-```bash
-docker run -it --name mi-contenedor proyecto_final:latest bash
-```
-
-
-Aquí tienes el código completo de todo el README.md:
-
-markdown
-Copiar código
-
-# ¿Cómo ejecutar la simulación?
-
-## Parte 1: Creación y ejecución del Docker
-
-### A. Creación y ejecución del Docker por primera vez
-
-1. Crear la imagen: Utiliza el siguiente comando:
-
    ```bash
    docker build -t proyecto_final .
 Luego, se tiene que ejecutar el contenedor a partir de la imagen:
