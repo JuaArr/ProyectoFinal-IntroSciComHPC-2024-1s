@@ -1,7 +1,12 @@
-# LINK DE LA SUSTENTACIÓN:
-## https://youtu.be/-qipzMt7ynk
+# Simulación de los Vórtices de Von Karman utilizando OpenFOAM y Computación Paralela
 
-# ¿Cómo ejecutar la simulación?
+## LINK DE LA SUSTENTACIÓN:
+### https://youtu.be/-qipzMt7ynk
+
+## LINK DEL REPOSITORIO
+### https://github.com/JuaArr/ProyectoFinal-IntroSciComHPC-2024-1s.git
+
+## ¿Cómo ejecutar la simulación?
 
 ## Parte 1: Creación y ejecución del Docker
 
@@ -118,7 +123,7 @@ scp -P [puerto] -r [carpeta] [usuario]@[dirección_de_la_salafis]:[ruta]
 Ejemplo:
 
 ```bash
-scp -P 443 -r parallel_simulation agonzalezva@168.176.35.111:/home/agonzalezva/
+scp -P 443 -r datos agonzalezva@168.176.35.111:/home/agonzalezva/
 ```
 
 3. Exportar los datos de la Salafis a tu computador:
