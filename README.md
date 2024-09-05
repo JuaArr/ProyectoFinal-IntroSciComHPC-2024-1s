@@ -9,8 +9,10 @@
 
 1. Crear la imagen: Utiliza el siguiente comando:
 
-   ```bash
-   docker build -t proyecto_final .
+```bash
+docker build -t proyecto_final .
+```
+
 Luego, se tiene que ejecutar el contenedor a partir de la imagen:
 
 ```bash
