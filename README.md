@@ -13,7 +13,7 @@
 docker build -t proyecto_final .
 ```
 
-Luego, se tiene que ejecutar el contenedor a partir de la imagen:
+2. Luego, se tiene que ejecutar el contenedor a partir de la imagen:
 
 ```bash
 docker run -it --name mi-contenedor proyecto_final:latest bash
