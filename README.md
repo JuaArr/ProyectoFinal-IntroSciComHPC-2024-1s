@@ -44,6 +44,16 @@ Por ejemplo:
 docker start 215d
 ```
 
+3. Para ejecutar un shell interactivo dentro del contenedor mi_contenedor, se puede usar:
+
+```bash
+docker exec -it [ID_Docker] /bin/bash
+```
+Por ejemplo:
+
+```bash
+docker exec -it 215d /bin/bash
+```
 ## Parte 2: Pre y procesamiento de la simulación
 
 ### Paso 1: Preparación
